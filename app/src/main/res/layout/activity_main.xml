@@ -529,13 +529,12 @@
 
     <ImageButton
         android:id="@+id/imagebutton001"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
         android:layout_marginStart="128dp"
         android:layout_marginTop="384dp"
-        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/blue_gray_button35"
         android:contentDescription="TODO"
-        android:foreground="@color/colorLightOn"
         app:layout_constraintStart_toEndOf="@+id/imagebutton012"
         app:layout_constraintTop_toBottomOf="@+id/imagebutton314" />
 

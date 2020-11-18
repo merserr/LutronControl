@@ -11,6 +11,7 @@ import android.content.pm.ActivityInfo;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -248,8 +249,10 @@ public class MainActivity extends AppCompatActivity {
              //   android:backgroundTintMode="src_over"
 
              //   button001.setTintMode(drawable, PorterDuff.Mode.SRC_OVER);
-                button001.setBackgroundTintMode(PorterDuff.Mode.SRC_OVER);
-                button001.setBackgroundTintList(ColorStateList.valueOf(Color.argb(255, 0, 0, 255)));
+                //button001.setBackgroundTintMode(PorterDuff.Mode.SRC_OVER);
+                //button001.setBackgroundTintList(ColorStateList.valueOf(Color.argb(255, 0, 0, 255)));
+                //button001.setImageResource(R.drawable.green_gray_button35);
+                if(r001.charAt(0) == '1'){button001.setImageResource(R.drawable.green_yellow_button35);}else{button001.setImageResource(R.drawable.green_gray_button35);}
                 processor=2;
                 link=4;
                 keypad=22;
@@ -310,11 +313,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @SuppressLint("ResourceAsColor")
     void Processing(String inputMassage){
-        //   Log.d(LOG_TAG, "inputMassage: "+ inputMassage);
+           Log.d(LOG_TAG, "input Processing Massage: "+ inputMassage);
 
         int dummyi;
+//        if (!inputMassage.matches("\\[(\\[\"-?\\d{10}\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\"\\],?)+\\]")) { }
+            //if (inputMassage.matches("KBP, \\[\\d:\\d:\\d?\\d\\], \\d")) {
+        if (inputMassage.matches("\\{\"cli\": \"Ok\".*")) {
+        //if (inputMassage.matches("\\{\"cli.*")) {
+
+            Log.d(LOG_TAG, "Processing inputMassage: "+ inputMassage);
 
         dummyi = inputMassage.indexOf("r001") + 8;
         r001 = inputMassage.substring(dummyi, (dummyi + 1));
@@ -424,7 +432,8 @@ public class MainActivity extends AppCompatActivity {
 
         float alfalow=0.15f;
 
-        if(r001.charAt(0) == '1'){button001.setAlpha(1f);}else{button001.setAlpha(alfalow);}
+        if(r001.charAt(0) == '1'){button001.setImageResource(R.drawable.blue_yellow_button35);}else{button001.setImageResource(R.drawable.blue_gray_button35);}
+
         if(r003.charAt(0) == '1'){button003.setAlpha(1f);}else{button003.setAlpha(alfalow);}
         if(r004.charAt(0) == '1'){button004.setAlpha(1f);}else{button004.setAlpha(alfalow);}
         if(r005.charAt(0) == '1'){button005.setAlpha(1f);}else{button005.setAlpha(alfalow);}
@@ -478,6 +487,7 @@ public class MainActivity extends AppCompatActivity {
         //   button304.setAlpha(0.5f);
         //   button304.setBackground(Drawable.createFromPath("@drawable/btn_top_border"));
 
+        }
     }
 void ControlSection (String room, int processor, int link, int keypad, int button) {
     room_name.setVisibility(View.VISIBLE);

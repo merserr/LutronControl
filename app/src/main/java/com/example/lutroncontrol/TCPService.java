@@ -68,9 +68,11 @@ public class TCPService extends Service {
         @Override
         protected Void doInBackground(Void... params) {
 
-            Log.d(LOG_TAG, "sending comand to address "+ipaddress+" port "+port);
+            Log.d(LOG_TAG, "doInBackground sendstring: "+sendstring);
 
-            sendstring="\r\ninfo\r\n";
+            //Log.d(LOG_TAG, "sending comand to address "+ipaddress+" port "+port);
+
+            //sendstring="\r\ninfo\r\n";
 
             try {
                 socket = new Socket();
