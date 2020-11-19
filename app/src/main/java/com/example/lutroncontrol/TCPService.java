@@ -120,7 +120,7 @@ public class TCPService extends Service {
 
                 // send massage "No connect" to MainActivity
                 Intent intent2 = new Intent(MainActivity.BROADCAST_ACTION);
-                intent2.putExtra(MainActivity.MASSAGE, ipaddress+":"+port);
+                intent2.putExtra(MainActivity.MASSAGE, "No connect to "+ipaddress+":"+port);
                 sendBroadcast(intent2);
             } else {
                               Log.d(LOG_TAG, "inputMassage: "+ inputMassage);

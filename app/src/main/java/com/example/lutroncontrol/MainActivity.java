@@ -11,17 +11,16 @@ import android.content.pm.ActivityInfo;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import static android.graphics.Color.RED;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener {
 
     public final static String ROOM_NAME = "ROOM_NAME";
     private static final String LOG_TAG = "==MainActivity==";
@@ -42,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button button_morning, button_day, button_evening, button_night, button_on_off, buttonSend;
     TextView room_name;
+    FrameLayout frame;
     int processor=0;
     int link=0;
     int keypad=0;
@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         room_name = findViewById(R.id.textView);
+        frame = findViewById(R.id.frame);
         button_morning = findViewById(R.id.button_morning);
         button_day = findViewById(R.id.button_day);
         button_evening = findViewById(R.id.button_evening);
@@ -137,95 +138,69 @@ public class MainActivity extends AppCompatActivity {
         button008 = findViewById(R.id.imagebutton008);
 
         room_name.setVisibility(View.INVISIBLE);
+        frame.setVisibility(View.INVISIBLE);
         button_morning.setVisibility(View.INVISIBLE);
         button_day.setVisibility(View.INVISIBLE);
         button_evening.setVisibility(View.INVISIBLE);
         button_night.setVisibility(View.INVISIBLE);
         button_on_off.setVisibility(View.INVISIBLE);
 
-        button_morning.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //        Log.d(LOG_TAG, "button_morning click");
-                button=1;
-                sending_command=sending_command_prepared + String.valueOf(button);
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, TCPService.class);
-                intent.putExtra("ipaddress", ipaddress);
-                intent.putExtra("port", port);
-                intent.putExtra("command", sending_command);
-                Log.d(LOG_TAG, "sending_command: "+sending_command);
-                MainActivity.this.startService(intent);
-            }
-        });
+        button_morning.setOnClickListener(this);
+        button_day.setOnClickListener(this);
+        button_evening.setOnClickListener(this);
+        button_night.setOnClickListener(this);
+        button_on_off.setOnClickListener(this);
 
-        button_day.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //        Log.d(LOG_TAG, "button_morning click");
-                button=2;
-                sending_command=sending_command_prepared + String.valueOf(button);
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, TCPService.class);
-                intent.putExtra("ipaddress", ipaddress);
-                intent.putExtra("port", port);
-                //intent.putExtra("command", "KBP, [2:4:22], 2");
-                intent.putExtra("command", sending_command);
-                Log.d(LOG_TAG, "sending_command: "+sending_command);
-                MainActivity.this.startService(intent);
-            }
-        });
+        button001.setOnLongClickListener((View.OnLongClickListener) this);
+        button003.setOnLongClickListener((View.OnLongClickListener) this);
+        button004.setOnLongClickListener((View.OnLongClickListener) this);
+        button005.setOnLongClickListener((View.OnLongClickListener) this);
+        button008.setOnLongClickListener((View.OnLongClickListener) this);
+        button009.setOnLongClickListener((View.OnLongClickListener) this);
+        button010.setOnLongClickListener((View.OnLongClickListener) this);
+        button011.setOnLongClickListener((View.OnLongClickListener) this);
+        button012.setOnLongClickListener((View.OnLongClickListener) this);
+        button013.setOnLongClickListener((View.OnLongClickListener) this);
+        button101.setOnLongClickListener((View.OnLongClickListener) this);
+        button102.setOnLongClickListener((View.OnLongClickListener) this);
+        button103.setOnLongClickListener((View.OnLongClickListener) this);
+        button104.setOnLongClickListener((View.OnLongClickListener) this);
+        button105.setOnLongClickListener((View.OnLongClickListener) this);
+        button106.setOnLongClickListener((View.OnLongClickListener) this);
+        button107.setOnLongClickListener((View.OnLongClickListener) this);
+        button108.setOnLongClickListener((View.OnLongClickListener) this);
+        button109.setOnLongClickListener((View.OnLongClickListener) this);
+        button110.setOnLongClickListener((View.OnLongClickListener) this);
+        button111.setOnLongClickListener((View.OnLongClickListener) this);
+        button112.setOnLongClickListener((View.OnLongClickListener) this);
+        button113.setOnLongClickListener((View.OnLongClickListener) this);
+        button114.setOnLongClickListener((View.OnLongClickListener) this);
+        button201.setOnLongClickListener((View.OnLongClickListener) this);
+        button202.setOnLongClickListener((View.OnLongClickListener) this);
+        button204.setOnLongClickListener((View.OnLongClickListener) this);
+        button205.setOnLongClickListener((View.OnLongClickListener) this);
+        button206.setOnLongClickListener((View.OnLongClickListener) this);
+        button207.setOnLongClickListener((View.OnLongClickListener) this);
+        button208.setOnLongClickListener((View.OnLongClickListener) this);
+        button209.setOnLongClickListener((View.OnLongClickListener) this);
+        button210.setOnLongClickListener((View.OnLongClickListener) this);
+        button211.setOnLongClickListener((View.OnLongClickListener) this);
+        button301.setOnLongClickListener((View.OnLongClickListener) this);
+        button302.setOnLongClickListener((View.OnLongClickListener) this);
+        button303.setOnLongClickListener((View.OnLongClickListener) this);
+        button304.setOnLongClickListener((View.OnLongClickListener) this);
+        button304a.setOnLongClickListener((View.OnLongClickListener) this);
+        button305.setOnLongClickListener((View.OnLongClickListener) this);
+        button306.setOnLongClickListener((View.OnLongClickListener) this);
+        button314.setOnLongClickListener((View.OnLongClickListener) this);
+        button315.setOnLongClickListener((View.OnLongClickListener) this);
 
-        button_evening.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //        Log.d(LOG_TAG, "button_morning click");
-                button=3;
-                sending_command=sending_command_prepared + String.valueOf(button);
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, TCPService.class);
-                intent.putExtra("ipaddress", ipaddress);
-                intent.putExtra("port", port);
-                //intent.putExtra("command", "KBP, [2:4:22], 3");
-                intent.putExtra("command", sending_command);
-                Log.d(LOG_TAG, "sending_command :"+sending_command);
-                MainActivity.this.startService(intent);
-            }
-        });
-
-        button_night.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //        Log.d(LOG_TAG, "button_morning click");
-                button=4;
-                sending_command=sending_command_prepared + String.valueOf(button);
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, TCPService.class);
-                intent.putExtra("ipaddress", ipaddress);
-                intent.putExtra("port", port);
-                //intent.putExtra("command", "KBP, [2:4:22], 4");
-                intent.putExtra("command", sending_command);
-                Log.d(LOG_TAG, "sending_command: "+sending_command);
-                MainActivity.this.startService(intent);
-            }
-        });
-
-        button_on_off.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //        Log.d(LOG_TAG, "button_morning click");
-                button=6;
-                sending_command=sending_command_prepared + String.valueOf(button);
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, TCPService.class);
-                intent.putExtra("ipaddress", ipaddress);
-                intent.putExtra("port", port);
-                //intent.putExtra("command", "KBP, [2:4:22], 6");
-                intent.putExtra("command", sending_command);
-                Log.d(LOG_TAG, "sending_command: "+sending_command);
-                MainActivity.this.startService(intent);
-            }
-        });
 
         buttonSend.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //        Log.d(LOG_TAG, "buttonSend click");
                 room_name.setVisibility(View.INVISIBLE);
+                frame.setVisibility(View.INVISIBLE);
                 button_morning.setVisibility(View.INVISIBLE);
                 button_day.setVisibility(View.INVISIBLE);
                 button_evening.setVisibility(View.INVISIBLE);
@@ -241,80 +216,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        button001.setOnLongClickListener(new View.OnLongClickListener() {
-            @SuppressLint("ResourceAsColor")
-            public boolean onLongClick(View v) {
-                Log.d(LOG_TAG, "button001 LongClick");
-             //   android:backgroundTint="#0A2DEC"
-             //   android:backgroundTintMode="src_over"
 
-             //   button001.setTintMode(drawable, PorterDuff.Mode.SRC_OVER);
-                //button001.setBackgroundTintMode(PorterDuff.Mode.SRC_OVER);
-                //button001.setBackgroundTintList(ColorStateList.valueOf(Color.argb(255, 0, 0, 255)));
-                //button001.setImageResource(R.drawable.green_gray_button35);
-                if(r001.charAt(0) == '1'){button001.setImageResource(R.drawable.green_yellow_button35);}else{button001.setImageResource(R.drawable.green_gray_button35);}
-                processor=2;
-                link=4;
-                keypad=22;
-                ControlSection("001", processor, link, keypad, button);
-
-         //       Intent intent1 = new Intent();
-         //       intent1.setClass(MainActivity.this, ControlActivity.class);
-         //       intent1.putExtra("ipaddress", ipaddress);
-         //       intent1.putExtra(ROOM_NAME, "001");
-         //       MainActivity.this.startActivity(intent1);
-                return false;
-            }
-        });
-
-        button003.setOnLongClickListener(new View.OnLongClickListener() {
-            public boolean onLongClick(View v) {
-                Log.d(LOG_TAG, "button003 LongClick");
-                button003.setBackgroundTintMode(PorterDuff.Mode.SRC_OVER);
-                button003.setBackgroundTintList(ColorStateList.valueOf(Color.argb(255, 0, 0, 255)));
-                processor=2;
-                link=4;
-                keypad=15;
-                ControlSection("003", processor, link, keypad, button);
-         //       Intent intent1 = new Intent();
-        //       intent1.setClass(MainActivity.this, ControlActivity.class);
-        //        intent1.putExtra("ipaddress", ipaddress);
-         //       intent1.putExtra(ROOM_NAME, "003");
-         //       MainActivity.this.startActivity(intent1);
-                return false;
-            }
-        });
-
-        button004.setOnLongClickListener(new View.OnLongClickListener() {
-            public boolean onLongClick(View v) {
-                Log.d(LOG_TAG, "button003 LongClick");
-                button004.setBackgroundTintMode(PorterDuff.Mode.SRC_OVER);
-                button004.setBackgroundTintList(ColorStateList.valueOf(Color.argb(255, 0, 0, 255)));
-                processor=1;
-                link=4;
-                keypad=1;
-                ControlSection("004", processor, link, keypad, button);
-                return false;
-            }
-        });
-
-        button005.setOnLongClickListener(new View.OnLongClickListener() {
-            public boolean onLongClick(View v) {
-                Log.d(LOG_TAG, "button003 LongClick");
-                button005.setBackgroundTintMode(PorterDuff.Mode.SRC_OVER);
-                button005.setBackgroundTintList(ColorStateList.valueOf(Color.argb(255, 0, 0, 255)));
-                processor=2;
-                link=4;
-                keypad=11;
-                ControlSection("005", processor, link, keypad, button);
-                return false;
-            }
-        });
 
     }
 
     void Processing(String inputMassage){
-           Log.d(LOG_TAG, "input Processing Massage: "+ inputMassage);
+           Log.d(LOG_TAG, "input Processing Massage1: "+ inputMassage);
 
         int dummyi;
 //        if (!inputMassage.matches("\\[(\\[\"-?\\d{10}\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\"\\],?)+\\]")) { }
@@ -322,7 +229,7 @@ public class MainActivity extends AppCompatActivity {
         if (inputMassage.matches("\\{\"cli\": \"Ok\".*")) {
         //if (inputMassage.matches("\\{\"cli.*")) {
 
-            Log.d(LOG_TAG, "Processing inputMassage: "+ inputMassage);
+            Log.d(LOG_TAG, "input Processing Massage2: "+ inputMassage);
 
         dummyi = inputMassage.indexOf("r001") + 8;
         r001 = inputMassage.substring(dummyi, (dummyi + 1));
@@ -414,22 +321,6 @@ public class MainActivity extends AppCompatActivity {
         dummyi = inputMassage.indexOf("r315") + 8;
         r315 = inputMassage.substring(dummyi, (dummyi + 1));
 
-/*
-    Log.d(LOG_TAG, "r001= "+ r001);
-    Log.d(LOG_TAG, "r003= "+ r003);
-    Log.d(LOG_TAG, "r004= "+ r004);
-    Log.d(LOG_TAG, "r005= "+ r005);
-    Log.d(LOG_TAG, "r008= "+ r008);
-    Log.d(LOG_TAG, "r009= "+ r009);
-    Log.d(LOG_TAG, "r010= "+ r010);
-    Log.d(LOG_TAG, "r011= "+ r011);
-    Log.d(LOG_TAG, "r012= "+ r012);
-    Log.d(LOG_TAG, "r013= "+ r013);
-*/
-
-
-
-
         float alfalow=0.15f;
 
         if(r001.charAt(0) == '1'){button001.setImageResource(R.drawable.blue_yellow_button35);}else{button001.setImageResource(R.drawable.blue_gray_button35);}
@@ -487,10 +378,13 @@ public class MainActivity extends AppCompatActivity {
         //   button304.setAlpha(0.5f);
         //   button304.setBackground(Drawable.createFromPath("@drawable/btn_top_border"));
 
+        } else if (inputMassage.matches("No connect to .*")) {
+            Toast.makeText(MainActivity.this, inputMassage, Toast.LENGTH_LONG).show();
         }
     }
 void ControlSection (String room, int processor, int link, int keypad, int button) {
     room_name.setVisibility(View.VISIBLE);
+    frame.setVisibility(View.VISIBLE);
     button_morning.setVisibility(View.VISIBLE);
     button_day.setVisibility(View.VISIBLE);
     button_evening.setVisibility(View.VISIBLE);
@@ -501,5 +395,262 @@ void ControlSection (String room, int processor, int link, int keypad, int butto
     sending_command_prepared = "KBP, ["+String.valueOf(processor)+":"+String.valueOf(link)+":"+String.valueOf(keypad)+"], ";
     Log.d(LOG_TAG, "sending_command_prepared = " + sending_command_prepared);
 }
+
+
+   /*
+        button_morning.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //        Log.d(LOG_TAG, "button_morning click");
+                button=1;
+                sending_command=sending_command_prepared + String.valueOf(button);
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, TCPService.class);
+                intent.putExtra("ipaddress", ipaddress);
+                intent.putExtra("port", port);
+                intent.putExtra("command", sending_command);
+                Log.d(LOG_TAG, "sending_command: "+sending_command);
+                MainActivity.this.startService(intent);
+            }
+        });
+
+
+
+
+*/
+
+
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.button_morning: button=1; sending_command=sending_command_prepared + String.valueOf(button); Log.d(LOG_TAG, "button_morning"); break;
+            case R.id.button_day:     button=2; sending_command=sending_command_prepared + String.valueOf(button); Log.d(LOG_TAG, "button_day");     break;
+            case R.id.button_evening: button=3; sending_command=sending_command_prepared + String.valueOf(button); Log.d(LOG_TAG, "button_evening"); break;
+            case R.id.button_night:   button=4; sending_command=sending_command_prepared + String.valueOf(button); Log.d(LOG_TAG, "button_night");     break;
+            case R.id.button_on_off:  button=5; sending_command=sending_command_prepared + String.valueOf(button); Log.d(LOG_TAG, "button_on_off"); break;
+        }
+
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this, TCPService.class);
+        intent.putExtra("ipaddress", ipaddress);
+        intent.putExtra("port", port);
+        intent.putExtra("command", sending_command);
+        Log.d(LOG_TAG, "sending_command: "+sending_command);
+        MainActivity.this.startService(intent);
+    }
+
+
+    /*
+        button001.setOnLongClickListener(new View.OnLongClickListener() {
+            @SuppressLint("ResourceAsColor")
+            public boolean onLongClick(View v) {
+                Log.d(LOG_TAG, "button001 LongClick");
+             //   android:backgroundTint="#0A2DEC"
+             //   android:backgroundTintMode="src_over"
+
+             //   button001.setTintMode(drawable, PorterDuff.Mode.SRC_OVER);
+                //button001.setBackgroundTintMode(PorterDuff.Mode.SRC_OVER);
+                //button001.setBackgroundTintList(ColorStateList.valueOf(Color.argb(255, 0, 0, 255)));
+                //button001.setImageResource(R.drawable.green_gray_button35);
+                if(r001.charAt(0) == '1'){button001.setImageResource(R.drawable.green_yellow_button35);}else{button001.setImageResource(R.drawable.green_gray_button35);}
+                processor=2;
+                link=4;
+                keypad=22;
+                ControlSection("001", processor, link, keypad, button);
+
+         //       Intent intent1 = new Intent();
+         //       intent1.setClass(MainActivity.this, ControlActivity.class);
+         //       intent1.putExtra("ipaddress", ipaddress);
+         //       intent1.putExtra(ROOM_NAME, "001");
+         //       MainActivity.this.startActivity(intent1);
+                return false;
+            }
+        });
+
+        button003.setOnLongClickListener(new View.OnLongClickListener() {
+            public boolean onLongClick(View v) {
+                Log.d(LOG_TAG, "button003 LongClick");
+                button003.setBackgroundTintMode(PorterDuff.Mode.SRC_OVER);
+                button003.setBackgroundTintList(ColorStateList.valueOf(Color.argb(255, 0, 0, 255)));
+                processor=2;
+                link=4;
+                keypad=15;
+                ControlSection("003", processor, link, keypad, button);
+         //       Intent intent1 = new Intent();
+        //       intent1.setClass(MainActivity.this, ControlActivity.class);
+        //        intent1.putExtra("ipaddress", ipaddress);
+         //       intent1.putExtra(ROOM_NAME, "003");
+         //       MainActivity.this.startActivity(intent1);
+                return false;
+            }
+        });
+
+        button004.setOnLongClickListener(new View.OnLongClickListener() {
+            public boolean onLongClick(View v) {
+                Log.d(LOG_TAG, "button003 LongClick");
+                button004.setBackgroundTintMode(PorterDuff.Mode.SRC_OVER);
+                button004.setBackgroundTintList(ColorStateList.valueOf(Color.argb(255, 0, 0, 255)));
+                processor=1;
+                link=4;
+                keypad=1;
+                ControlSection("004", processor, link, keypad, button);
+                return false;
+            }
+        });
+
+        button005.setOnLongClickListener(new View.OnLongClickListener() {
+            public boolean onLongClick(View v) {
+                Log.d(LOG_TAG, "button003 LongClick");
+                button005.setBackgroundTintMode(PorterDuff.Mode.SRC_OVER);
+                button005.setBackgroundTintList(ColorStateList.valueOf(Color.argb(255, 0, 0, 255)));
+                processor=2;
+                link=4;
+                keypad=11;
+                ControlSection("005", processor, link, keypad, button);
+                return false;
+            }
+        });
+
+  */
+
+
+
+    public boolean onLongClick(View v) {
+        Log.d(LOG_TAG, "onLongClick");
+        switch (v.getId()) {
+            case R.id.imagebutton001:
+                ControlSection("001", 2, 4, 22, button);
+                break;
+            case R.id.imagebutton003:
+                ControlSection("003", 2, 4, 15, button);
+                break;
+            case R.id.imagebutton004:
+                ControlSection("004", 1, 4, 1, button);
+                break;
+            case R.id.imagebutton005:
+                ControlSection("005", 2, 4, 11, button);
+                break;
+            case R.id.imagebutton008:
+                ControlSection("008", 2, 5, 30, button);
+                break;
+            case R.id.imagebutton009:
+                ControlSection("009", 2, 4, 2, button);
+                break;
+            case R.id.imagebutton010:
+                ControlSection("010", 2, 4, 10, button);
+                break;
+            case R.id.imagebutton011:
+                ControlSection("011", 1, 4, 6, button);
+                break;
+            case R.id.imagebutton012:
+                ControlSection("012", 1, 4, 16, button);
+                break;
+            case R.id.imagebutton013:
+                ControlSection("013", 1, 4, 11, button);
+                break;
+            case R.id.imagebutton101:
+                ControlSection("101", 1, 6, 15, button);
+                break;
+            case R.id.imagebutton102:
+                ControlSection("102", 2, 5, 19, button);
+                break;
+            case R.id.imagebutton103:
+                ControlSection("103", 1, 5, 29, button);
+                break;
+            case R.id.imagebutton104:
+                ControlSection("104", 1, 6, 15, button);
+                break;
+            case R.id.imagebutton105:
+                ControlSection("105", 2, 6, 7, button);
+                break;
+            case R.id.imagebutton106:
+                ControlSection("106", 2, 6, 14, button);
+                break;
+            case R.id.imagebutton107:
+                ControlSection("107", 1, 5, 17, button);
+                break;
+            case R.id.imagebutton108:
+                ControlSection("108", 1, 5, 3, button);
+                break;
+            case R.id.imagebutton109:
+                ControlSection("109", 2, 6, 16, button);
+                break;
+            case R.id.imagebutton110:
+                ControlSection("110", 1, 4, 19, button);
+                break;
+            case R.id.imagebutton111:
+                ControlSection("111", 1, 5, 19, button);
+                break;
+            case R.id.imagebutton112:
+                ControlSection("112", 1, 5, 8, button);
+                break;
+            case R.id.imagebutton113:
+                ControlSection("113", 2, 5, 7, button);
+                break;
+            case R.id.imagebutton114:
+                ControlSection("114", 2, 5, 1, button);
+                break;
+            case R.id.imagebutton201:
+                ControlSection("201", processor, link, keypad, button);
+                break;
+            case R.id.imagebutton202:
+                ControlSection("202", processor, link, keypad, button);
+                break;
+            case R.id.imagebutton204:
+                ControlSection("204", 4, 6, 19, button);
+                break;
+            case R.id.imagebutton205:
+                ControlSection("205", 4, 4, 6, button);
+                break;
+            case R.id.imagebutton206:
+                ControlSection("206", 4, 4, 9, button);
+                break;
+            case R.id.imagebutton207:
+                ControlSection("207", 4, 4, 25, button);
+                break;
+            case R.id.imagebutton208:
+                ControlSection("208", 3, 4, 1, button);
+                break;
+            case R.id.imagebutton209:
+                ControlSection("209", 3, 5, 21, button);
+                break;
+            case R.id.imagebutton210:
+                ControlSection("210", 3, 4, 31, button);
+                break;
+            case R.id.imagebutton211:
+                ControlSection("211", 3, 6, 1, button);
+                break;
+            case R.id.imagebutton301:
+                ControlSection("301", 4, 6, 8, button);
+                break;
+            case R.id.imagebutton302:
+                ControlSection("302", 4, 6, 5, button);
+                break;
+            case R.id.imagebutton303:
+                ControlSection("303", 3, 5, 2, button);
+                break;
+            case R.id.imagebutton304:
+                ControlSection("304", processor, link, keypad, button);
+                break;
+            case R.id.imagebutton304a:
+                ControlSection("304a", processor, link, keypad, button);
+                break;
+            case R.id.imagebutton305:
+                ControlSection("305", 4, 6, 10, button);
+                break;
+            case R.id.imagebutton306:
+                ControlSection("306", 3, 6, 17, button);
+                break;
+            case R.id.imagebutton314:
+                ControlSection("314", 3, 6, 21, button);
+                break;
+            case R.id.imagebutton315:
+                ControlSection("315", 3, 6, 23, button);
+                break;
+
+        }
+        return false;
+    }
 
 }
