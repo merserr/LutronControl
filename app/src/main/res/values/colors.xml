@@ -4,6 +4,8 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
 
-    <color name="colorLightOn">#FFEB3B</color>
-    <color name="colorLightOff">#272020</color>
+    <color name="colorLightOn">#FFE402</color>
+    <color name="colorLightOff">#1CC6320D</color>
+    <color name="colorRED">#F51B0B</color>
+    <color name="colorBord">#8C010E83</color>
 </resources>

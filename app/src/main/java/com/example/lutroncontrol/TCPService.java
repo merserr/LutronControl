@@ -43,7 +43,7 @@ public class TCPService extends Service {
         boolean connect=false;
         final int port;
         final String ipaddress;
-        String sendstring;
+        final String sendstring;
         String inputMassage;
         Socket socket = null;
         DataOutputStream dataOutputStream = null;
