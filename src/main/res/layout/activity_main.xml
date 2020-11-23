@@ -6,528 +6,566 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageButton
-        android:id="@+id/imagebutton011"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="328dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton012"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton012"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="300dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="270dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/imagebutton013"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="360dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="110dp"
+        android:layout_height="425dp"
+        android:layout_marginTop="175dp"
+        android:background="#494847"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSend"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageButton
-        android:id="@+id/imagebutton001"
+    </FrameLayout>
+
+
+    <Button
+        android:id="@+id/button_on_off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="@string/on_off"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_night" />
+
+    <Button
+        android:id="@+id/button110"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="360dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="224dp"
         android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton012"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
 
-    <ImageButton
-        android:id="@+id/imagebutton010"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="256dp"
-        android:layout_marginTop="296dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton012"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton009"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="276dp"
-        android:layout_marginTop="328dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton012"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton008"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="256dp"
-        android:layout_marginTop="360dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton012"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton003"
-        android:layout_width="40dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="117dp"
-        android:layout_marginTop="328dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton012"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton004"
+    <Button
+        android:id="@+id/button303"
         android:layout_width="40dp"
         android:layout_height="20dp"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="328dp"
+        android:layout_marginTop="108dp"
         android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton012"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button314"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/imagebutton005"
+    <Button
+        android:id="@+id/button302"
         android:layout_width="40dp"
         android:layout_height="20dp"
         android:layout_marginStart="188dp"
-        android:layout_marginTop="328dp"
+        android:layout_marginTop="108dp"
         android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton012"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button314"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/imagebutton101"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="244dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton110"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton104"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="180dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton110"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton105"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="180dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton110"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton108"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="180dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton110"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton107"
+    <Button
+        android:id="@+id/button004"
         android:layout_width="40dp"
         android:layout_height="20dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="212dp"
+        android:layout_marginTop="352dp"
         android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton110"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button012"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
 
-    <ImageButton
-        android:id="@+id/imagebutton110"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="212dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton112"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="180dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton110"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton114"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="256dp"
-        android:layout_marginTop="180dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton110"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton109"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="276dp"
-        android:layout_marginTop="212dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton110"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton111"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="244dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton110"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton103"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="244dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton110"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton102"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="244dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton110"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton113"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="256dp"
-        android:layout_marginTop="244dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton110"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton106"
-        android:layout_width="40dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="212dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton110"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton206"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="256dp"
-        android:layout_marginTop="130dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton210"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton207"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="130dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton210"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton208"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="130dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton210"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton209"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="130dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton210"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton204"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="256dp"
-        android:layout_marginTop="65dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton210"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton314"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="45dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        android:textColorHighlight="#8C811C"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton306"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="44dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton314"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton301"
+    <Button
+        android:id="@+id/button003"
         android:layout_width="40dp"
         android:layout_height="20dp"
         android:layout_marginStart="116dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="352dp"
         android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton314"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/todo" />
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button012"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
 
-    <ImageButton
-        android:id="@+id/imagebutton303"
-        android:layout_width="40dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="44dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton314"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton302"
-        android:layout_width="40dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="188dp"
-        android:layout_marginTop="44dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton314"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton305"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="276dp"
-        android:layout_marginTop="44dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton314"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton315"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="15dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton314"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton210"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="96dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton304"
-        android:layout_width="20dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="16dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton314"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton211"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="65dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton210"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton304a"
-        android:layout_width="20dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="16dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton314"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton205"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="276dp"
-        android:layout_marginTop="96dp"
-        android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton210"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
-
-    <ImageButton
-        android:id="@+id/imagebutton202"
+    <Button
+        android:id="@+id/button202"
         android:layout_width="40dp"
         android:layout_height="20dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="100dp"
         android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton210"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button210"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
 
-    <ImageButton
-        android:id="@+id/imagebutton201"
+    <Button
+        android:id="@+id/button013"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="384dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button305"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="276dp"
+        android:layout_marginTop="108dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button314"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="@string/day"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_morning" />
+
+    <Button
+        android:id="@+id/button304a"
+        android:layout_width="20dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button314"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button101"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="268dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button110"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button208"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="132dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button210"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button_evening"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="@string/evening"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_day" />
+
+    <Button
+        android:id="@+id/button306"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="108dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button314"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button112"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="184dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button110"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button304"
+        android:layout_width="20dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="20dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button314"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button109"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="276dp"
+        android:layout_marginTop="224dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button110"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button211"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="64dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button210"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button005"
         android:layout_width="40dp"
         android:layout_height="20dp"
         android:layout_marginStart="200dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="352dp"
         android:alpha="?android:attr/disabledAlpha"
-        android:foreground="@color/colorLightOn"
-        app:layout_constraintStart_toEndOf="@+id/imagebutton210"
-        app:layout_constraintTop_toBottomOf="@+id/imagebutton314"
-        android:contentDescription="@string/todo" />
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button012"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button_morning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="173dp"
+        android:text="@string/morning"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button210"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="100dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button104"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="184dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button110"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button209"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="132dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button210"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button008"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="256dp"
+        android:layout_marginTop="384dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button012"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button_night"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="@string/night"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_evening" />
+
+    <Button
+        android:id="@+id/button108"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="184dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button110"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button010"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="256dp"
+        android:layout_marginTop="320dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button012"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button009"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="276dp"
+        android:layout_marginTop="352dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button012"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button103"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="268dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button110"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button206"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="256dp"
+        android:layout_marginTop="132dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button210"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button207"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="132dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button210"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button314"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="108dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button012"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="324dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button105"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="184dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button110"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button113"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="256dp"
+        android:layout_marginTop="268dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button110"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button111"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="268dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button110"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button114"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="256dp"
+        android:layout_marginTop="184dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button110"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button204"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="256dp"
+        android:layout_marginTop="64dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button210"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button315"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="16dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button314"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button106"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="224dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button110"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button011"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="352dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button012"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button102"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="268dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button110"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button001"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="384dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button012"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button205"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="276dp"
+        android:layout_marginTop="100dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button210"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button201"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="100dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button210"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
+
+    <Button
+        android:id="@+id/button301"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="108dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button314"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button107"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="224dp"
+        android:alpha="?android:attr/disabledAlpha"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toEndOf="@+id/button110"
+        app:layout_constraintTop_toBottomOf="@+id/button314" />
 
     <Button
         android:id="@+id/buttonSend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="76dp"
-        android:text="@string/send"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginBottom="2dp"
+        android:text="@string/check"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
