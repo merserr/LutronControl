@@ -1,8 +1,6 @@
 package com.example.lutroncontrol;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -19,7 +17,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener {
 
-    public final static String ROOM_NAME = "ROOM_NAME";
+    //public final static String ROOM_NAME = "ROOM_NAME";
     private static final String LOG_TAG = "==MainActivity==";
     public final static String MASSAGE = "inputMassage";
     public static final String BROADCAST_ACTION = "com.example.lutroncontrol";
@@ -38,21 +36,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button button_morning, button_day, button_evening, button_night, button_on_off, buttonSend;
     TextView room_name;
     FrameLayout frame;
-    int processor=0;
-    int link=0;
-    int keypad=0;
+    //int processor=0;
+    //int link=0;
+    //int keypad=0;
     int button=0;
     String sending_command_prepared="";
     String sending_command="";
-    final GradientDrawable gd = new GradientDrawable();
-    final GradientDrawable gd1 = new GradientDrawable();
-    final GradientDrawable gd2 = new GradientDrawable();
-    final GradientDrawable gd3 = new GradientDrawable();
-    final float alfahight=1;
+    GradientDrawable gd = new GradientDrawable();
+    GradientDrawable gd1 = new GradientDrawable();
+    GradientDrawable gd2 = new GradientDrawable();
+    GradientDrawable gd3 = new GradientDrawable();
+    GradientDrawable gd4 = new GradientDrawable();
+    GradientDrawable gd5 = new GradientDrawable();
+    float alfahight=1;
 
     BroadcastReceiver br;
 
-    @SuppressLint("WrongViewCast")
+    //@SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,8 +74,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //        Log.d(LOG_TAG, "onReceive: massage1 = " + massage1);
                 assert massage1 != null;
                 Processing(massage1);
-                //    Toast.makeText(MainActivity.this, "Not connect to " + massage1 +" !", Toast.LENGTH_LONG).show();
-
             }
         };
         // create filter for BroadcastReceiver
@@ -193,8 +191,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button314.setOnLongClickListener((View.OnLongClickListener) this);
         button315.setOnLongClickListener((View.OnLongClickListener) this);
 
-        //gd1.setColor(getColor(R.color.colorPrimary)); // Changes this drawbale to use a single color instead of a gradient
-
         // Light is on, buttons control not visible
         gd.setCornerRadius(5);
         gd.setStroke(5, getColor(R.color.colorBord));
@@ -206,6 +202,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         gd1.setStroke(3, getColor(R.color.colorBord));
         gd1.setColor(getColor(R.color.colorLightOff));
 
+        // Lightnight  is on, buttons control not visible
+        gd4.setCornerRadius(5);
+        gd4.setStroke(3, getColor(R.color.colorBord));
+        gd4.setColor(getColor(R.color.colorAccent));
+
         // Light is on, buttons control visible
         gd2.setCornerRadius(5);
         gd2.setStroke(7, getColor(R.color.colorRED));
@@ -215,6 +216,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         gd3.setCornerRadius(5);
         gd3.setStroke(7, getColor(R.color.colorRED));
         gd3.setColor(getColor(R.color.colorLightOff));
+
+        // Lightnight is on, buttons control visible
+        gd5.setCornerRadius(5);
+        gd5.setStroke(7, getColor(R.color.colorRED));
+        gd5.setColor(getColor(R.color.colorAccent));
 
         buttonSend.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -227,8 +233,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 button_night.setVisibility(View.INVISIBLE);
                 button_on_off.setVisibility(View.INVISIBLE);
 
-               // alfaset();
-               // setallalfa(1f);
                 setallalfa(alfahight);
 
                 Intent intent = new Intent();
@@ -239,21 +243,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 MainActivity.this.startService(intent);
             }
         });
-
-
     }
 
     void Processing(String inputMassage){
-        Log.d(LOG_TAG, "input Processing Massage1: "+ inputMassage);
-
+        //Log.d(LOG_TAG, "input Processing Massage1: "+ inputMassage);
         int dummyi;
-//        if (!inputMassage.matches("\\[(\\[\"-?\\d{10}\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\"\\],?)+\\]")) { }
-        //if (inputMassage.matches("KBP, \\[\\d:\\d:\\d?\\d\\], \\d")) {
-       // inputMassage = "cli: Ok r001="1";
+        // inputMassage = "{"cli": "Ok", "r001": "0", "r003": "1", "r004": "1", "r005": "1", "r008": "0", "r009": "0", "r010": "0", "r011": "1", "r012": "0", "r013": "1", "r101": "0", "r102": "0", "r103": "0", "r104": "0", "r105": "0", "r106": "0", "r107": "0", "r108": "0", "r109": "0", "r110": "0", "r111": "0", "r112": "0", "r113": "0", "r114": "0", "r201": "0", "r202": "0", "r204": "0", "r205": "0", "r206": "0", "r207": "0", "r208": "0", "r209": "0", "r210": "0", "r211": "0", "r301": "0", "r302": "0", "r303": "0", "r304": "0", "r304a": "0", "r305": "0", "r306": "0", "r314": "0", "r315": "0"}";
+        // if (!inputMassage.matches("\\[(\\[\"-?\\d{10}\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\",\"-?\\d\\d?\\d?\\.\\d\"\\],?)+\\]")) { }
         if (inputMassage.matches("\\{\"cli\": \"Ok\".*")) {
-            //if (inputMassage.matches("\\{\"cli.*")) {
-
-            Log.d(LOG_TAG, "input Processing Massage2: "+ inputMassage);
+            //Log.d(LOG_TAG, "input Processing Massage2: "+ inputMassage);
 
             dummyi = inputMassage.indexOf("r001") + 8;
             r001 = inputMassage.substring(dummyi, (dummyi + 1));
@@ -345,8 +343,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             dummyi = inputMassage.indexOf("r315") + 8;
             r315 = inputMassage.substring(dummyi, (dummyi + 1));
 
-        //    r315 = "1";
-        //    setallalfa(alfahight);
             alfaset();
 
         } else if (inputMassage.matches("No connect to .*")) {
@@ -354,7 +350,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (inputMassage.matches("\\{\"cli\": \"NOT\".*")) {
             Toast.makeText(MainActivity.this, "Client not ready", Toast.LENGTH_LONG).show();
         }
-        r315 = "1";
     }
     void ControlSection (String room, int processor, int link, int keypad, int button) {
         room_name.setVisibility(View.VISIBLE);
@@ -391,7 +386,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public boolean onLongClick(View v) {
 
-         Log.d(LOG_TAG, "onLongClick");
+        Log.d(LOG_TAG, "onLongClick");
         alfaset();
         setallalfa(0.2f);
 
@@ -584,12 +579,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.button304:
                 ControlSection("304", 4, 6, 5, button);
                 button304.setAlpha(alfahight);
-                if(r304.charAt(0) == '1'){button304.setBackgroundDrawable(gd2);}else{button304.setBackgroundDrawable(gd3);}
+                if(r304.charAt(0) == '1'){button304.setBackgroundDrawable(gd2);}else if(r304.charAt(0) == '2'){button304.setBackgroundDrawable(gd5);}else {button304.setBackgroundDrawable(gd3);}
                 break;
             case R.id.button304a:
                 ControlSection("304a", 3, 5, 2, button);
                 button304a.setAlpha(alfahight);
-                if(r304a.charAt(0) == '1'){button304a.setBackgroundDrawable(gd2);}else{button304a.setBackgroundDrawable(gd3);}
+                if(r304a.charAt(0) == '1'){button304a.setBackgroundDrawable(gd2);}else if(r304a.charAt(0) == '2'){button304a.setBackgroundDrawable(gd5);}else {button304a.setBackgroundDrawable(gd3);}
                 break;
             case R.id.button305:
                 ControlSection("305", 4, 6, 10, button);
@@ -610,109 +605,109 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 ControlSection("315", 3, 6, 23, button);
                 button315.setAlpha(alfahight);
                 if(r315.charAt(0) == '1'){button315.setBackgroundDrawable(gd2);}else{button315.setBackgroundDrawable(gd3);}
-               break;
+                break;
         }
         return false;
     }
 
     void alfaset(){
 
-    if(r001.charAt(0) == '1'){button001.setBackgroundDrawable(gd);}else{button001.setBackgroundDrawable(gd1);}
-    if(r003.charAt(0) == '1'){button003.setBackgroundDrawable(gd);}else{button003.setBackgroundDrawable(gd1);}
-    if(r004.charAt(0) == '1'){button004.setBackgroundDrawable(gd);}else{button004.setBackgroundDrawable(gd1);}
-    if(r005.charAt(0) == '1'){button005.setBackgroundDrawable(gd);}else{button005.setBackgroundDrawable(gd1);}
-    if(r008.charAt(0) == '1'){button008.setBackgroundDrawable(gd);}else{button008.setBackgroundDrawable(gd1);}
-    if(r009.charAt(0) == '1'){button009.setBackgroundDrawable(gd);}else{button009.setBackgroundDrawable(gd1);}
-    if(r010.charAt(0) == '1'){button010.setBackgroundDrawable(gd);}else{button010.setBackgroundDrawable(gd1);}
-    if(r011.charAt(0) == '1'){button011.setBackgroundDrawable(gd);}else{button011.setBackgroundDrawable(gd1);}
-    if(r012.charAt(0) == '1'){button012.setBackgroundDrawable(gd);}else{button012.setBackgroundDrawable(gd1);}
-    if(r013.charAt(0) == '1'){button013.setBackgroundDrawable(gd);}else{button013.setBackgroundDrawable(gd1);}
-    //    String r101, r102, r103, r104, r105, r106, r107, r108, r109, r110, r111, r112, r113, r114;
-    if(r101.charAt(0) == '1'){button101.setBackgroundDrawable(gd);}else{button101.setBackgroundDrawable(gd1);}
-    if(r102.charAt(0) == '1'){button102.setBackgroundDrawable(gd);}else{button102.setBackgroundDrawable(gd1);}
-    if(r103.charAt(0) == '1'){button103.setBackgroundDrawable(gd);}else{button103.setBackgroundDrawable(gd1);}
-    if(r104.charAt(0) == '1'){button104.setBackgroundDrawable(gd);}else{button104.setBackgroundDrawable(gd1);}
-    if(r105.charAt(0) == '1'){button105.setBackgroundDrawable(gd);}else{button105.setBackgroundDrawable(gd1);}
-    if(r106.charAt(0) == '1'){button106.setBackgroundDrawable(gd);}else{button106.setBackgroundDrawable(gd1);}
-    if(r107.charAt(0) == '1'){button107.setBackgroundDrawable(gd);}else{button107.setBackgroundDrawable(gd1);}
-    if(r108.charAt(0) == '1'){button108.setBackgroundDrawable(gd);}else{button108.setBackgroundDrawable(gd1);}
-    if(r109.charAt(0) == '1'){button109.setBackgroundDrawable(gd);}else{button109.setBackgroundDrawable(gd1);}
-    if(r110.charAt(0) == '1'){button110.setBackgroundDrawable(gd);}else{button110.setBackgroundDrawable(gd1);}
-    if(r111.charAt(0) == '1'){button111.setBackgroundDrawable(gd);}else{button111.setBackgroundDrawable(gd1);}
-    if(r112.charAt(0) == '1'){button112.setBackgroundDrawable(gd);}else{button112.setBackgroundDrawable(gd1);}
-    if(r113.charAt(0) == '1'){button113.setBackgroundDrawable(gd);}else{button113.setBackgroundDrawable(gd1);}
-    if(r114.charAt(0) == '1'){button114.setBackgroundDrawable(gd);}else{button114.setBackgroundDrawable(gd1);}
-    //    String r201, r202, r204, r205, r206, r207, r208, r209, r210, r211;
-    if(r201.charAt(0) == '1'){button201.setBackgroundDrawable(gd);}else{button201.setBackgroundDrawable(gd1);}
-    if(r202.charAt(0) == '1'){button202.setBackgroundDrawable(gd);}else{button202.setBackgroundDrawable(gd1);}
-    if(r204.charAt(0) == '1'){button204.setBackgroundDrawable(gd);}else{button204.setBackgroundDrawable(gd1);}
-    if(r205.charAt(0) == '1'){button205.setBackgroundDrawable(gd);}else{button205.setBackgroundDrawable(gd1);}
-    if(r206.charAt(0) == '1'){button206.setBackgroundDrawable(gd);}else{button206.setBackgroundDrawable(gd1);}
-    if(r207.charAt(0) == '1'){button207.setBackgroundDrawable(gd);}else{button207.setBackgroundDrawable(gd1);}
-    if(r208.charAt(0) == '1'){button208.setBackgroundDrawable(gd);}else{button208.setBackgroundDrawable(gd1);}
-    if(r209.charAt(0) == '1'){button209.setBackgroundDrawable(gd);}else{button209.setBackgroundDrawable(gd1);}
-    if(r210.charAt(0) == '1'){button210.setBackgroundDrawable(gd);}else{button210.setBackgroundDrawable(gd1);}
-    if(r211.charAt(0) == '1'){button211.setBackgroundDrawable(gd);}else{button211.setBackgroundDrawable(gd1);}
-    //    String r301, r302, r303, r304, r304a, r305, r306, r314, r315;
-    if(r301.charAt(0) == '1'){button301.setBackgroundDrawable(gd);}else{button301.setBackgroundDrawable(gd1);}
-    if(r302.charAt(0) == '1'){button302.setBackgroundDrawable(gd);}else{button302.setBackgroundDrawable(gd1);}
-    if(r303.charAt(0) == '1'){button303.setBackgroundDrawable(gd);}else{button303.setBackgroundDrawable(gd1);}
-    if(r304.charAt(0) == '1'){button304.setBackgroundDrawable(gd);}else{button304.setBackgroundDrawable(gd1);}
-    if(r304.charAt(0) == '2'){button304.setBackgroundDrawable(gd);}else{button304.setBackgroundDrawable(gd1);}
-    if(r304a.charAt(0) == '1'){button304a.setBackgroundDrawable(gd);}else{button304a.setBackgroundDrawable(gd1);}
-    if(r304a.charAt(0) == '2'){button304a.setBackgroundDrawable(gd);}else{button304a.setBackgroundDrawable(gd1);}
-    if(r305.charAt(0) == '1'){button305.setBackgroundDrawable(gd);}else{button305.setBackgroundDrawable(gd1);}
-    if(r306.charAt(0) == '1'){button306.setBackgroundDrawable(gd);}else{button306.setBackgroundDrawable(gd1);}
-    if(r314.charAt(0) == '1'){button314.setBackgroundDrawable(gd);}else{button314.setBackgroundDrawable(gd1);}
-    if(r315.charAt(0) == '1'){button315.setBackgroundDrawable(gd);}else{button315.setBackgroundDrawable(gd1);}
-}
+        if(r001.charAt(0) == '1'){button001.setBackgroundDrawable(gd);}else{button001.setBackgroundDrawable(gd1);}
+        if(r003.charAt(0) == '1'){button003.setBackgroundDrawable(gd);}else{button003.setBackgroundDrawable(gd1);}
+        if(r004.charAt(0) == '1'){button004.setBackgroundDrawable(gd);}else{button004.setBackgroundDrawable(gd1);}
+        if(r005.charAt(0) == '1'){button005.setBackgroundDrawable(gd);}else{button005.setBackgroundDrawable(gd1);}
+        if(r008.charAt(0) == '1'){button008.setBackgroundDrawable(gd);}else{button008.setBackgroundDrawable(gd1);}
+        if(r009.charAt(0) == '1'){button009.setBackgroundDrawable(gd);}else{button009.setBackgroundDrawable(gd1);}
+        if(r010.charAt(0) == '1'){button010.setBackgroundDrawable(gd);}else{button010.setBackgroundDrawable(gd1);}
+        if(r011.charAt(0) == '1'){button011.setBackgroundDrawable(gd);}else{button011.setBackgroundDrawable(gd1);}
+        if(r012.charAt(0) == '1'){button012.setBackgroundDrawable(gd);}else{button012.setBackgroundDrawable(gd1);}
+        if(r013.charAt(0) == '1'){button013.setBackgroundDrawable(gd);}else{button013.setBackgroundDrawable(gd1);}
+        //    String r101, r102, r103, r104, r105, r106, r107, r108, r109, r110, r111, r112, r113, r114;
+        if(r101.charAt(0) == '1'){button101.setBackgroundDrawable(gd);}else{button101.setBackgroundDrawable(gd1);}
+        if(r102.charAt(0) == '1'){button102.setBackgroundDrawable(gd);}else{button102.setBackgroundDrawable(gd1);}
+        if(r103.charAt(0) == '1'){button103.setBackgroundDrawable(gd);}else{button103.setBackgroundDrawable(gd1);}
+        if(r104.charAt(0) == '1'){button104.setBackgroundDrawable(gd);}else{button104.setBackgroundDrawable(gd1);}
+        if(r105.charAt(0) == '1'){button105.setBackgroundDrawable(gd);}else{button105.setBackgroundDrawable(gd1);}
+        if(r106.charAt(0) == '1'){button106.setBackgroundDrawable(gd);}else{button106.setBackgroundDrawable(gd1);}
+        if(r107.charAt(0) == '1'){button107.setBackgroundDrawable(gd);}else{button107.setBackgroundDrawable(gd1);}
+        if(r108.charAt(0) == '1'){button108.setBackgroundDrawable(gd);}else{button108.setBackgroundDrawable(gd1);}
+        if(r109.charAt(0) == '1'){button109.setBackgroundDrawable(gd);}else{button109.setBackgroundDrawable(gd1);}
+        if(r110.charAt(0) == '1'){button110.setBackgroundDrawable(gd);}else{button110.setBackgroundDrawable(gd1);}
+        if(r111.charAt(0) == '1'){button111.setBackgroundDrawable(gd);}else{button111.setBackgroundDrawable(gd1);}
+        if(r112.charAt(0) == '1'){button112.setBackgroundDrawable(gd);}else{button112.setBackgroundDrawable(gd1);}
+        if(r113.charAt(0) == '1'){button113.setBackgroundDrawable(gd);}else{button113.setBackgroundDrawable(gd1);}
+        if(r114.charAt(0) == '1'){button114.setBackgroundDrawable(gd);}else{button114.setBackgroundDrawable(gd1);}
+        //    String r201, r202, r204, r205, r206, r207, r208, r209, r210, r211;
+        if(r201.charAt(0) == '1'){button201.setBackgroundDrawable(gd);}else{button201.setBackgroundDrawable(gd1);}
+        if(r202.charAt(0) == '1'){button202.setBackgroundDrawable(gd);}else{button202.setBackgroundDrawable(gd1);}
+        if(r204.charAt(0) == '1'){button204.setBackgroundDrawable(gd);}else{button204.setBackgroundDrawable(gd1);}
+        if(r205.charAt(0) == '1'){button205.setBackgroundDrawable(gd);}else{button205.setBackgroundDrawable(gd1);}
+        if(r206.charAt(0) == '1'){button206.setBackgroundDrawable(gd);}else{button206.setBackgroundDrawable(gd1);}
+        if(r207.charAt(0) == '1'){button207.setBackgroundDrawable(gd);}else{button207.setBackgroundDrawable(gd1);}
+        if(r208.charAt(0) == '1'){button208.setBackgroundDrawable(gd);}else{button208.setBackgroundDrawable(gd1);}
+        if(r209.charAt(0) == '1'){button209.setBackgroundDrawable(gd);}else{button209.setBackgroundDrawable(gd1);}
+        if(r210.charAt(0) == '1'){button210.setBackgroundDrawable(gd);}else{button210.setBackgroundDrawable(gd1);}
+        if(r211.charAt(0) == '1'){button211.setBackgroundDrawable(gd);}else{button211.setBackgroundDrawable(gd1);}
+        //    String r301, r302, r303, r304, r304a, r305, r306, r314, r315;
+        if(r301.charAt(0) == '1'){button301.setBackgroundDrawable(gd);}else{button301.setBackgroundDrawable(gd1);}
+        if(r302.charAt(0) == '1'){button302.setBackgroundDrawable(gd);}else{button302.setBackgroundDrawable(gd1);}
+        if(r303.charAt(0) == '1'){button303.setBackgroundDrawable(gd);}else{button303.setBackgroundDrawable(gd1);}
+        if(r304.charAt(0) == '1'){button304.setBackgroundDrawable(gd);}else if(r304.charAt(0) == '2'){button304.setBackgroundDrawable(gd4);}else {button304.setBackgroundDrawable(gd1);}
+        if(r304a.charAt(0) == '1'){button304a.setBackgroundDrawable(gd);}else if(r304a.charAt(0) == '2'){button304a.setBackgroundDrawable(gd4);}else {button304a.setBackgroundDrawable(gd1);}
+        if(r305.charAt(0) == '1'){button305.setBackgroundDrawable(gd);}else{button305.setBackgroundDrawable(gd1);}
+        if(r306.charAt(0) == '1'){button306.setBackgroundDrawable(gd);}else{button306.setBackgroundDrawable(gd1);}
+        if(r314.charAt(0) == '1'){button314.setBackgroundDrawable(gd);}else{button314.setBackgroundDrawable(gd1);}
+        if(r315.charAt(0) == '1'){button315.setBackgroundDrawable(gd);}else{button315.setBackgroundDrawable(gd1);}
+        if(r315.charAt(0) == '1'){buttonSend.setBackgroundDrawable(gd);}else{buttonSend.setBackgroundDrawable(gd1);}
+        buttonSend.setBackgroundDrawable(gd);
+    }
 
     void setallalfa(float alfalow){
-    button001.setAlpha(alfalow);
-    button003.setAlpha(alfalow);
-    button004.setAlpha(alfalow);
-    button005.setAlpha(alfalow);
-    button008.setAlpha(alfalow);
-    button009.setAlpha(alfalow);
-    button010.setAlpha(alfalow);
-    button011.setAlpha(alfalow);
-    button012.setAlpha(alfalow);
-    button013.setAlpha(alfalow);
+        button001.setAlpha(alfalow);
+        button003.setAlpha(alfalow);
+        button004.setAlpha(alfalow);
+        button005.setAlpha(alfalow);
+        button008.setAlpha(alfalow);
+        button009.setAlpha(alfalow);
+        button010.setAlpha(alfalow);
+        button011.setAlpha(alfalow);
+        button012.setAlpha(alfalow);
+        button013.setAlpha(alfalow);
         //    String r101, r102, r103, r104, r105, r106, r107, r108, r109, r110, r111, r112, r113, r114;
-    button101.setAlpha(alfalow);
-    button102.setAlpha(alfalow);
-    button103.setAlpha(alfalow);
-    button104.setAlpha(alfalow);
-    button105.setAlpha(alfalow);
-    button106.setAlpha(alfalow);
-    button107.setAlpha(alfalow);
-    button108.setAlpha(alfalow);
-    button109.setAlpha(alfalow);
-    button110.setAlpha(alfalow);
-    button111.setAlpha(alfalow);
-    button112.setAlpha(alfalow);
-    button113.setAlpha(alfalow);
-    button114.setAlpha(alfalow);
+        button101.setAlpha(alfalow);
+        button102.setAlpha(alfalow);
+        button103.setAlpha(alfalow);
+        button104.setAlpha(alfalow);
+        button105.setAlpha(alfalow);
+        button106.setAlpha(alfalow);
+        button107.setAlpha(alfalow);
+        button108.setAlpha(alfalow);
+        button109.setAlpha(alfalow);
+        button110.setAlpha(alfalow);
+        button111.setAlpha(alfalow);
+        button112.setAlpha(alfalow);
+        button113.setAlpha(alfalow);
+        button114.setAlpha(alfalow);
         //    String r201, r202, r204, r205, r206, r207, r208, r209, r210, r211;
-    button201.setAlpha(alfalow);
-    button202.setAlpha(alfalow);
-    button204.setAlpha(alfalow);
-    button205.setAlpha(alfalow);
-    button206.setAlpha(alfalow);
-    button207.setAlpha(alfalow);
-    button208.setAlpha(alfalow);
-    button209.setAlpha(alfalow);
-    button210.setAlpha(alfalow);
-    button211.setAlpha(alfalow);
+        button201.setAlpha(alfalow);
+        button202.setAlpha(alfalow);
+        button204.setAlpha(alfalow);
+        button205.setAlpha(alfalow);
+        button206.setAlpha(alfalow);
+        button207.setAlpha(alfalow);
+        button208.setAlpha(alfalow);
+        button209.setAlpha(alfalow);
+        button210.setAlpha(alfalow);
+        button211.setAlpha(alfalow);
         //    String r301, r302, r303, r304, r304a, r305, r306, r314, r315;
-    button301.setAlpha(alfalow);
-    button302.setAlpha(alfalow);
-    button303.setAlpha(alfalow);
-    button304.setAlpha(alfalow);
-    button304a.setAlpha(alfalow);
-    button305.setAlpha(alfalow);
-    button306.setAlpha(alfalow);
-    button314.setAlpha(alfalow);
-    button315.setAlpha(alfalow);
+        button301.setAlpha(alfalow);
+        button302.setAlpha(alfalow);
+        button303.setAlpha(alfalow);
+        button304.setAlpha(alfalow);
+        button304a.setAlpha(alfalow);
+        button305.setAlpha(alfalow);
+        button306.setAlpha(alfalow);
+        button314.setAlpha(alfalow);
+        button315.setAlpha(alfalow);
     }
 }
