@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">LutronControl</string>
-    <string name="check">check it!</string>
     <string name="morning">morning</string>
     <string name="day">day</string>
     <string name="evening">evening</string>
